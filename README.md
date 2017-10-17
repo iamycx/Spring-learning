@@ -48,7 +48,7 @@
 * [x] 入门小例子，spring-helloworld
 * [x] IoC
 * [x] AOP
-* [x] spring MVC
+* [ ] spring MVC
 * [ ] 整理部分源码分析,形成博客
 
 	
