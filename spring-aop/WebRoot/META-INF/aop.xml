@@ -1,0 +1,11 @@
+<?xml version="1.0"?>
+<aspectj>
+	<!-- 以下为@Configure的测试配置 -->
+	<aspects>
+		<aspect name="com.iamycx.ltw.PreGreetingAspect" />
+	</aspects>
+	<weaver
+		options="-showWeaveInfo -XmessageHandlerClass:org.springframework.aop.aspectj.AspectJWeaverMessageHandler">
+		<include within="com.iamycx.ltw.*" />
+	</weaver>
+</aspectj>

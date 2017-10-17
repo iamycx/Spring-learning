@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:p="http://www.springframework.org/schema/p"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans 
+         http://www.springframework.org/schema/beans/spring-beans-3.0.xsd">
+
+	<!-- 属性注入 简化版 通过p命名空间 -->
+	<bean id="car0" class="com.iamycx.ditype.Car">
+		<property name="brand" value="红旗CA72" />
+		<property name="maxSpeed" value="200" />
+		<property name="price" value="20000.00" />
+	</bean>
+
+	<!-- 属性注入 简化版 通过p命名空间 -->
+	<bean id="car" class="com.iamycx.ditype.Car" p:brand="红旗CA72"
+		p:maxSpeed="200" p:price="20000.00" />
+	<bean id="boss" class="com.iamycx.ditype.Boss" p:car-ref="car" />
+
+	<!--构造函数注入：type -->
+	<bean id="car1" class="com.iamycx.ditype.Car">
+		<constructor-arg type="java.lang.String" value="红旗CA72-1" />
+		<constructor-arg type="double" value="20000" />
+	</bean>
+
+	<!-- 构造函数注入：index 通过入参位置索引确定对应关系，索引从0开始 -->
+	<bean id="car2" class="com.iamycx.ditype.Car">
+		<constructor-arg index="0" value="红旗CA72-2" />
+		<constructor-arg index="1" value="中国一汽" />
+		<constructor-arg index="2" value="20000" />
+	</bean>
+
+	<!--构造函数注入：type&index 通过入参类型和入参位置索引确定对应关系 -->
+	<bean id="car3" class="com.iamycx.ditype.Car">
+		<constructor-arg index="0" type="java.lang.String"
+			value="红旗CA72-3" />
+		<constructor-arg index="1" type="java.lang.String"
+			value="中国一汽" />
+		<constructor-arg index="2" type="int" value="200" />
+	</bean>
+
+	<bean id="car4" class="com.iamycx.ditype.Car">
+		<constructor-arg index="0" value="红旗CA72-4" />
+		<constructor-arg index="1" value="中国一汽" />
+		<constructor-arg index="2" type="int" value="200" />
+	</bean>
+
+	<!--构造函数注入：自动识别入参类型 -->
+	<bean id="boss1" class="com.iamycx.ditype.Boss">
+		<constructor-arg value="John-1" />
+		<constructor-arg ref="car" />
+		<constructor-arg ref="office" />
+	</bean>
+	<bean id="office" class="com.iamycx.ditype.Boss" />
+
+	<!-- 工厂方法注入 -->
+	<bean id="carFactory" class="com.iamycx.ditype.CarFactory" />
+	<bean id="car5" factory-bean="carFactory" factory-method="createHongQiCar">
+	</bean>
+	<!-- 静态工厂方法 -->
+	<bean id="car6" class="com.iamycx.ditype.CarFactory"
+		factory-method="createCar"></bean>
+
+</beans>

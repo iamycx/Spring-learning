@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:aop="http://www.springframework.org/schema/aop"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-3.0.xsd
+           http://www.springframework.org/schema/aop http://www.springframework.org/schema/aop/spring-aop-3.0.xsd">
+	<aop:config proxy-target-class="true">
+		<aop:advisor advice-ref="testAdvice"
+			pointcut="execution(* com..*.Waiter.greetTo(..))" />
+		<aop:aspect ref="adviceMethods">
+			<aop:before method="preGreeting"
+				pointcut="target(com.iamycx.aspectj.example.NaiveWaiter) and args(name)"
+				arg-names="name" />
+			<aop:after-returning method="afterReturning"
+				pointcut="target(com.iamycx.aspectj.example.SmartSeller)" returning="retVal" />
+			<aop:around method="aroundMethod"
+				pointcut="execution(* serveTo(..)) and within(com.iamycx.aspectj.example.Waiter)" />
+			<aop:after-throwing method="afterThrowingMethod"
+				pointcut="target(com.iamycx.aspectj.example.SmartSeller) and execution(* checkBill(..))"
+				throwing="iae" />
+			<aop:after method="afterMethod" pointcut="execution(* com..*.Waiter.greetTo(..))" />
+			<aop:declare-parents implement-interface="com.iamycx.aspectj.example.Seller"
+				default-impl="com.iamycx.aspectj.example.SmartSeller" types-matching="com.iamycx.aspectj.example.Waiter+" />
+			
+			<aop:before method="bindParams"
+				pointcut="target(com.iamycx.aspectj.example.NaiveWaiter) and args(name,num,..)" />
+		
+		</aop:aspect>
+	</aop:config>
+	<bean id="testAdvice" class="com.iamycx.schema.TestBeforeAdvice" />
+	<bean id="adviceMethods" class="com.iamycx.schema.AdviceMethods" />
+	<bean id="naiveWaiter" class="com.iamycx.aspectj.example.NaiveWaiter" />
+	<bean id="naughtyWaiter" class="com.iamycx.aspectj.example.NaughtyWaiter" />
+	<bean id="seller" class="com.iamycx.aspectj.example.SmartSeller" />
+</beans>
