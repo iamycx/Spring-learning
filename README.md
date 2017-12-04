@@ -14,6 +14,7 @@
 - [spring-helloworld](/spring-helloworld):一个简单的用户登录小例子,涉及 mvc 和 数据库读写
 - [spring-ioc](/spring-ioc):一些 ioc 的小例子,涉及生命周期,注入,bean 的配置等等
 - [spring-aop](/spring-aop):一些 aop 的小例子,涉及各种切点知识,动态代理(JDK,CGLib),`@AspectJ`, LTW等等
+- [seckill](/seckill):Java实现高并发秒杀系统
 
 -----	
 
@@ -35,11 +36,10 @@
 - 导入 [spring-helloworld/src/resources](/spring-helloworld/src/resources/) 中的 [helloword.sql](/spring-helloworld/src/resources/helloworld.sql) 添加数据表和测试数据
 
 
-在 IDE 中添加 tomcat 容器:
-
-- [怎样给Myeclipse配置tomcat服务器](https://jingyan.baidu.com/article/4853e1e53465271909f72690.html)
-- [spring-helloworld](/spring-helloworld)模块需要添加一个 tomcat 容器
-
+在 IDEA 中添加 tomcat 容器:
+- ToolBar -> 运行按钮旁边的下拉 -> "Edit Configurations" -> "+" -> "Tomcat Server" 选 local,[如图所示](http://7xph6d.com1.z0.glb.clouddn.com/IDEA_web-%E6%B7%BB%E5%8A%A0tomcat-01.png)
+- 如果是第一次添加,还需要配置 tomcat 的路径,[如图所示](http://7xph6d.com1.z0.glb.clouddn.com/IDEA_web-%E6%B7%BB%E5%8A%A0tomcat-02.png)
+- [spring-helloworld](/spring-helloworld) 和 [seckill](/seckill) 模块各自需要添加一个 tomcat 容器
 
 ## TODO
 
