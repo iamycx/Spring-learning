@@ -25,6 +25,11 @@
  
 ![效果图](images/result_1.jpg)  
 
+ - 提示输入手机号界面  
+ 
+![效果图](images/result_7.jpg)  
+
+
  - 秒杀倒计时提示界面  
  
 ![效果图](images/result_6.jpg)  
@@ -44,10 +49,6 @@
  - 秒杀结束提示界面  
  
 ![效果图](images/result_2.jpg)  
-
- - 提示输入手机号界面  
- 
-![效果图](images/result_7.jpg)  
 
 ---
 ## 项目的运行
@@ -75,22 +76,12 @@
 这里按照上面几个流程走下去,你要有基本的Maven认识以及Java语法的一些概念,要不然可能不太理解
 ### (一)Java高并发秒杀APi之业务分析与DAO层代码编写
 #### 构建项目的基本骨架
- * 首先我们要搭建出一个符合Maven约定的目录来,这里大致有两种方式,第一种:
-1. 第一种使用命令行手动构建一个maven结构的目录,当然我基本不会这样构建
+ * 首先我们要搭建出一个符合Maven约定的目录来:
+ - 使用命令行手动构建一个maven结构的目录,当然我基本不会这样构建
 ```
-mvn archetype:generate -DgroupId=com.suny.seckill -DartifactId=seckill -Dpackage=com.suny.seckill -Dversion=1.0-SNAPSHOT -DarchetypeArtifactId=maven-archetype-webapp
+mvn archetype:generate -DgroupId=com.iamycx.seckill -DartifactId=seckill -Dversion=1.0.0 -DarchetypeArtifactId=maven-archetype-webapp
 ```  
-这里要注意的是使用`archetype:generate`进行创建,在Maven老版本中是使用`archetype:create`,现在这种方法已经被弃用了,所以使用命令行创建的话注意了,稍微解释下这段语句的意思,就是构建一个一个`maven-archetype-webapp`骨架的Webapp项目,然后`groupId`为`com.suny.seckill `,`artifactId`为`seckill`,这里是Maven相关知识,可以按照自己的情况进行修改  
-
-2.第二种直接在IDE中进行创建,这里以IDEA为例
-  + 点击左上角`File>New>Project>Maven`
-  + 然后在里面勾选`Create from archetype`,然后再往下拉找到`org.apache.cocoon:cocoon-22-archetype-webapp`,选中它,注意要先勾选那个选项,否则选择不了,然后点击`Next`继续  
-  ![创建Maven项目](images/001.png)    
-  +然后就填写你的Maven的那几个重要的坐标了,自己看着填吧  
-  ![填写Maven坐标](images/002.png)  
-  +再就配置你的Maven的相关信息,默认应该是配置好的  
-  ![填写Maven在你本机的位置](images/003.png)  
-  +之后就是点`Finsh`,到此不出意外的话就应该创建成功了    
+这里要注意的是使用`archetype:generate`进行创建,在Maven老版本中是使用`archetype:create`,现在这种方法已经被弃用了,所以使用命令行创建的话注意了,稍微解释下这段语句的意思,就是构建一个一个`maven-archetype-webapp`骨架的Webapp项目,然后`groupId`为`com.suny.seckill `,`artifactId`为`seckill`,这里是Maven相关知识,可以按照自己的情况进行修改    
   
 #### 构建pom文件
   
