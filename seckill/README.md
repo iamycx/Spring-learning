@@ -68,10 +68,10 @@
 ## 项目编码 
 项目总结可能比较的长,**密集恐惧症**者请按小节进行阅读  
 
-- [(一)Java高并发秒杀API之业务分析与DAO层](/note/note1.md)
-- [(二)Java高并发秒杀API之Service层](/note/note2.md)
-- [(三)Java高并发秒杀API之web层](/note/note3.md)
-- [(四)Java高并发秒杀API之高并发优化](/note/note4.md)  
+- [(一)Java高并发秒杀API之业务分析与DAO层](images/note1.md)
+- [(二)Java高并发秒杀API之Service层](images/note2.md)
+- [(三)Java高并发秒杀API之web层](images/note3.md)
+- [(四)Java高并发秒杀API之高并发优化](images/note4.md)  
 
 这里按照上面几个流程走下去,你要有基本的Maven认识以及Java语法的一些概念,要不然可能不太理解
 ### (一)Java高并发秒杀APi之业务分析与DAO层代码编写
