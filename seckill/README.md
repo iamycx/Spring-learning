@@ -23,31 +23,31 @@
 ## 项目效果图
  - 秒杀商品列表  
  
-![效果图](/images/result_1.jpg)  
+![效果图](images/result_1.jpg)  
 
  - 秒杀倒计时提示界面  
  
-![效果图](/images/result_6.jpg)  
+![效果图](images/result_6.jpg)  
 
  - 开始秒杀提示界面  
  
-![效果图](/images/result_5.jpg) 
+![效果图](images/result_5.jpg) 
  
  - 重复秒杀提示界面  
  
-![效果图](/images/result_3.jpg)  
+![效果图](images/result_3.jpg)  
 
  - 秒杀成功提示界面  
  
-![效果图](/images/result_4.jpg) 
+![效果图](images/result_4.jpg) 
 
  - 秒杀结束提示界面  
  
-![效果图](/images/result_2.jpg)  
+![效果图](images/result_2.jpg)  
 
  - 提示输入手机号界面  
  
-![效果图](/images/result_7.jpg)  
+![效果图](images/result_7.jpg)  
 
 ---
 ## 项目的运行
@@ -55,7 +55,7 @@
 
 `Download Zip`或者 `git clone`
 ``` shell
-	git clone https://github.com/Sunybyjava/seckill.git
+	git clone https://github.com/iamycx/Spring-learning.git
 ```
 ### 导入到IDE  
 这里因为是使用`IDEA`创建的项目,所以使用`IDEA`直接打开是很方便的,提前是你要配置好`maven`的相关配置,以及项目`JDK`版本,
