@@ -15,7 +15,7 @@
 
 ## 项目环境的搭建
 * **操作系统** : Windows 7  
-* **IDE** ：MyEclipse 2016 Stable 1.0
+* **IDE** ：IntelliJ IDEA
 * **JDK** : JDK1.8
 * **Web容器** ： Tomcat 8.0 
 * **数据库** ：Mysql-5.1
